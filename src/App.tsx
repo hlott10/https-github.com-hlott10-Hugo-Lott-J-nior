@@ -49,11 +49,13 @@ function AppContent() {
   useEffect(() => {
     console.log("%c🌟 ESTRELIZE ATIVO [v1.1.0 - Multi-App Mode] ❤️", "color: #14b8a6; font-size: 20px; font-weight: bold; background: white; padding: 10px; border-radius: 10px;");
     
-    // Priority: Environment Variable -> Hostname
+    // Priority: URL Param -> Environment Variable -> Hostname
+    const searchParams = new URLSearchParams(window.location.search);
+    const forceV = searchParams.get('v');
     const envVertical = import.meta.env.VITE_VERTICAL;
     const hostname = window.location.hostname;
 
-    if (envVertical === 'saude' || hostname.includes('saude.')) {
+    if (forceV === 'saude' || envVertical === 'saude' || hostname.includes('saude.')) {
       setVertical('saude');
     } else {
       setVertical('portal');
