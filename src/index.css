@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-heading: 'Outfit', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Inter', sans-serif;
+    
+    --color-background: #010c0c;
+    --color-foreground: #E6FFFA;
+    
+    --color-card: #041d1d;
+    --color-card-foreground: #E6FFFA;
+    
+    --color-popover: #041d1d;
+    --color-popover-foreground: #E6FFFA;
+    
+    --color-primary: #0F766E;
+    --color-primary-foreground: #E6FFFA;
+    
+    --color-secondary: #0EA5A4;
+    --color-secondary-foreground: #E6FFFA;
+    
+    --color-muted: #041d1d;
+    --color-muted-foreground: #94a3b8;
+    
+    --color-accent: #14B8A6;
+    --color-accent-foreground: #E6FFFA;
+    
+    --color-destructive: #ef4444;
+    --color-destructive-foreground: #f8fafc;
+    
+    --color-border: #0F766E33;
+    --color-input: #0F766E33;
+    --color-ring: #14B8A6;
+    
+    --color-cta: #10B981;
+    
+    --radius-sm: 0.5rem;
+    --radius-md: 0.75rem;
+    --radius-lg: 1rem;
+}
+
+:root {
+    --background: #010c0c;
+    --foreground: #E6FFFA;
+    --card: #041d1d;
+    --card-foreground: #E6FFFA;
+    --popover: #041d1d;
+    --popover-foreground: #E6FFFA;
+    --primary: #0F766E;
+    --primary-foreground: #E6FFFA;
+    --secondary: #0EA5A4;
+    --secondary-foreground: #E6FFFA;
+    --muted: #041d1d;
+    --muted-foreground: #94a3b8;
+    --accent: #14B8A6;
+    --accent-foreground: #E6FFFA;
+    --destructive: #ef4444;
+    --destructive-foreground: #f8fafc;
+    --border: #0F766E33;
+    --input: #0F766E33;
+    --ring: #14B8A6;
+    --radius: 1.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground antialiased;
+    }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#14B8A6] to-[#10B981];
+}

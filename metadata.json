@@ -1,0 +1,6 @@
+{
+  "name": "Estrelize - Plataforma Unificada",
+  "description": "Ecossistema SaaS modular para gestão de reputação com IA, especializado em clínicas de saúde e restaurantes.",
+  "requestFramePermissions": ["camera", "microphone", "geolocation"],
+  "majorCapabilities": []
+}
