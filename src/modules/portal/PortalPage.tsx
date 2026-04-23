@@ -7,6 +7,10 @@ import { useState } from "react";
 export function Portal() {
   const [hoveredSide, setHoveredSide] = useState<"left" | "right" | null>(null);
 
+  const isDev = window.location.hostname.includes('run.app');
+  const restauranteUrl = isDev ? "/?v=restaurantes" : "https://restaurantes.estrelize.com.br";
+  const saudeUrl = isDev ? "/?v=saude" : "https://saude.estrelize.com.br";
+
   return (
     <div className="min-h-screen bg-[#020202] flex flex-col md:flex-row overflow-hidden relative">
       <SEO 
@@ -16,7 +20,7 @@ export function Portal() {
 
       {/* Restaurantes Side (Left) */}
       <a 
-        href="https://restaurantes.estrelize.com.br"
+        href={restauranteUrl}
         onMouseEnter={() => setHoveredSide("left")}
         onMouseLeave={() => setHoveredSide(null)}
         className={`relative flex-1 group overflow-hidden flex flex-col items-center justify-center p-12 text-center transition-all duration-700 
@@ -97,7 +101,7 @@ export function Portal() {
 
       {/* Saúde Side (Right) */}
       <a 
-        href="https://saude.estrelize.com.br"
+        href={saudeUrl}
         onMouseEnter={() => setHoveredSide("right")}
         onMouseLeave={() => setHoveredSide(null)}
         className={`relative flex-1 group overflow-hidden flex flex-col items-center justify-center p-12 text-center transition-all duration-700 
